@@ -1,5 +1,6 @@
 package service;
 
+import dto.request.AdvertisementFilterRequest;
 import dto.request.AdvertisementRequest;
 import dto.response.AdvertisementResponse;
 import entity.Advertisement;
@@ -9,9 +10,11 @@ import mapper.AdvertisementMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import repository.AdvertisementRepository;
 import repository.UserRepository;
+import service.specification.AdvertisementSpecification;
 
 
 import java.util.List;
@@ -51,6 +54,16 @@ public class AdvertisementServiceImpl implements AdvertisementService{
 
         return advertisementMapper.toListAdvertisementResponse(advertisementsList);
 
+    }
+
+    @Override
+    public Page<AdvertisementResponse> getAdByFilters(AdvertisementFilterRequest advertisementFilterRequest, Pageable pageable) {
+        Specification<Advertisement> specification =
+                AdvertisementSpecification.withFilter(advertisementFilterRequest);
+
+        Page<Advertisement> page = advertisementRepository.findAll(specification, pageable);
+
+        return page.map(advertisementMapper::toAdvertisementResponse);
     }
 
 
