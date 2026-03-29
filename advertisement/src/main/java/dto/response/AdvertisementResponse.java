@@ -9,7 +9,7 @@ public record AdvertisementResponse(
         String name,
         Category category,
         String subcategory,
-        Image image,
+        //Image image,
         Condition condition,
         Availability availability,
         Integer cost,

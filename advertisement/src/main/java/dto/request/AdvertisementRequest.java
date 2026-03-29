@@ -6,11 +6,10 @@ import java.time.LocalDateTime;
 
 
 public record AdvertisementRequest(
-        Long id,
         String name,
         Category category,
         String subcategory,
-        Image image,
+        //Image image,
         Condition condition,
         Availability availability,
         String description,

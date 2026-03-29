@@ -24,9 +24,9 @@ import lombok.experimental.SuperBuilder;
         @Column(name = "subcategory", nullable = false, length = 100)
         private String subcategory;        // Подкатегория
 
-        @OneToOne
-        @JoinColumn(name = "id_img", referencedColumnName = "id", nullable = false)
-        private Image image;              // Фото объявления
+    //@OneToOne
+        //@JoinColumn(name = "id_img", referencedColumnName = "id", nullable = false)
+        //private Image image;              // Фото объявления
 
         @Enumerated(EnumType.STRING)
         @Column(name = "condition", nullable = false, length = 50)

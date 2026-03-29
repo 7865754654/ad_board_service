@@ -17,7 +17,7 @@ public interface AdvertisementService {
     public AdvertisementResponse getAdById(Long id);
 
     //Получение всех объявлений, которые есть у определнного пользователя
-    public List<AdvertisementResponse> getAdvertisementsByUserId(Long id);
+    public List<AdvertisementResponse> getAdvertisementsByUserId(Long userId);
 
 
     //Поиск списка объяалений по фильтрам, указанных пользовтаелем

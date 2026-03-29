@@ -19,6 +19,7 @@ import service.specification.AdvertisementSpecification;
 
 import java.util.List;
 
+
 @Service
 @AllArgsConstructor
 public class AdvertisementServiceImpl implements AdvertisementService{
@@ -46,11 +47,11 @@ public class AdvertisementServiceImpl implements AdvertisementService{
     }
 
     @Override
-    public List<AdvertisementResponse> getAdvertisementsByUserId(Long id) {
-        userRepository.findById(id)
+    public List<AdvertisementResponse> getAdvertisementsByUserId(Long userId) {
+        userRepository.findById(userId)
                 .orElseThrow(() -> new EntityNotFoundException("Пользователь не найден"));
 
-        List<Advertisement> advertisementsList = advertisementRepository.findByUserId(id);
+        List<Advertisement> advertisementsList = advertisementRepository.findByUserId(userId);
 
         return advertisementMapper.toListAdvertisementResponse(advertisementsList);
 
