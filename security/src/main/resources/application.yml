@@ -1,0 +1,4 @@
+jwt:
+  access-token-secret: bMF9ZRoEJEPVqNCx6Qq0pWWha4gmYplEwMCST7pgOTu
+  refresh-token-secret: QEU1h51XmtfDtMs5yiqPn5VqFmcOVWbgCRFeDSO29em
+
